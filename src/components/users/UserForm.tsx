@@ -49,7 +49,7 @@ export function UserForm({ initialData, onSubmit, onCancel, isEdit, externalErro
     reset,
     setError,
   } = useForm<UserFormData>({
-    resolver: zodResolver(refinedUserSchema),
+    resolver: zodResolver(refinedUserSchema) as any,
     defaultValues: {
       name: initialData?.name || "",
       email: initialData?.email || "",

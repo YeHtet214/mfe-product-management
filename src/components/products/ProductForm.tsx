@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { cn } from "../../lib/utils";
-import { Save, X, Info } from "lucide-react";
+import { Save, Info } from "lucide-react";
 import { useEffect, useState } from "react";
 import { fetchCategories } from "../../services/categoryApi";
 import type { Category, Product } from "../../services/types";
@@ -42,7 +42,7 @@ export function ProductForm({ initialData, onSubmit, onCancel, isEdit, externalE
 		reset,
 		setError,
 	} = useForm<ProductFormData>({
-		resolver: zodResolver(productSchema),
+		resolver: zodResolver(productSchema) as any,
 		defaultValues: {
 			category_id: initialData?.category_id || "",
 			name: initialData?.name || "",
@@ -107,7 +107,7 @@ export function ProductForm({ initialData, onSubmit, onCancel, isEdit, externalE
 	};
 
 	return (
-		<form onSubmit={handleSubmit(onFormSubmit)} className="space-y-8">
+		<form onSubmit={handleSubmit(onFormSubmit as any)} className="space-y-8">
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 				<div className="space-y-2">
 					<label className="text-sm font-semibold text-gray-700">Product Name</label>

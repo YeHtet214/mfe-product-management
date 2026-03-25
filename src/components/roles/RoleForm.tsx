@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { cn } from "../../lib/utils";
-import { Save, X, Shield, Lock } from "lucide-react";
+import { Save, X, Lock } from "lucide-react";
 import { useEffect, useState } from "react";
 import { fetchPermissions } from "../../services/permissionApi";
 import type { PermissionGroup } from "../../services/types";

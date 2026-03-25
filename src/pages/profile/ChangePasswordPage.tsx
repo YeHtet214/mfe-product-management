@@ -1,5 +1,5 @@
 import { PageHeader } from "../../components/layout/PageHeader";
-import { Lock, ShieldCheck, ArrowLeft, Save, X, Eye, EyeOff } from "lucide-react";
+import { Lock, ShieldCheck, Save, X, Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";

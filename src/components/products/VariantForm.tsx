@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { cn } from "../../lib/utils";
-import { Save, X, Info } from "lucide-react";
+import { Save, Info } from "lucide-react";
 import { useEffect } from "react";
 import { AttributeFields } from "./AttributeFields";
 import type { ProductVariant } from "../../services/types";
@@ -43,7 +43,7 @@ export function VariantForm({ initialData, onSubmit, onCancel, isEdit, externalE
 		reset,
 		setError,
 	} = useForm<VariantFormData>({
-		resolver: zodResolver(variantSchema),
+		resolver: zodResolver(variantSchema) as any,
 		defaultValues: {
 			name: initialData?.name || "",
 			sku: initialData?.sku || "",
@@ -90,7 +90,7 @@ export function VariantForm({ initialData, onSubmit, onCancel, isEdit, externalE
 	};
 
 	return (
-		<form onSubmit={handleSubmit(onFormSubmit)} className="space-y-6">
+		<form onSubmit={handleSubmit(onFormSubmit as any)} className="space-y-6">
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 				<div className="space-y-2">
 					<label className="text-sm font-semibold text-gray-700">Variant Name</label>
@@ -211,3 +211,4 @@ export function VariantForm({ initialData, onSubmit, onCancel, isEdit, externalE
 		</form>
 	);
 }
+

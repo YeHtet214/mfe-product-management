@@ -1,7 +1,6 @@
 import {
   LayoutDashboard,
   ShoppingBag,
-  Tag,
   History,
   User,
   X,

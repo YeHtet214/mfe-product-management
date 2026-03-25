@@ -1,9 +1,8 @@
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { useEffect, useState, useCallback } from "react";
-import { PageHeader } from "../../components/layout/PageHeader";
 import { StatusBadge } from "../../components/shared/StatusBadge";
 import { ConfirmDialog } from "../../components/shared/ConfirmDialog";
-import { Edit2, ArrowLeft, Package, ShoppingBag, Info, Trash2, Plus, X } from "lucide-react";
+import { Edit2, ArrowLeft, Package, ShoppingBag, Info, Trash2, X } from "lucide-react";
 import { fetchProduct, deleteProduct } from "../../services/productApi";
 import { createVariant, updateVariant, deleteVariant } from "../../services/variantApi";
 import { VariantList } from "../../components/products/VariantList";
