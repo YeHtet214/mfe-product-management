@@ -52,16 +52,18 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
 	const login = () => {
 		const currentUrl = window.location.href;
-		window.location.href = `${authURL}?redirect=${encodeURIComponent(currentUrl)}`;
+		window.location.href = `${authURL}?redirect_uri=${encodeURIComponent(currentUrl)}`;
 	};
 
 	const logout = async () => {
-		await authLogout();
+		// Clear local state
 		setUser(null);
 		setRole(null);
 		setPermissions([]);
 		storage.removeUser();
-		login();
+		// Redirect to auth app for logout (auth logic is only in auth app)
+		const currentUrl = window.location.href;
+		window.location.href = `${authURL}?redirect_uri=${encodeURIComponent(currentUrl)}`;
 	};
 
 	return (
