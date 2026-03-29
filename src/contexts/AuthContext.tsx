@@ -2,7 +2,6 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import { getCurrentUser } from "../services/userApi";
 import type { User, Role } from "../services/types";
 import { storage } from "../services/storage";
-import { logout as authLogout } from "../services/authApi";
 import { authURL } from "../services/api";
 
 interface AuthContextType {
