@@ -1,7 +1,10 @@
 import axios from "axios";
+VITE_API_BASE_URL=
 
-export const baseURL = import.meta.env.VITE_API_BASE_URL || "http://mfe-server.test";
-export const authURL = import.meta.env.VITE_AUTH_URL || "http://auth.mfe-server.test:5173";
+VITE_AUTH_URL=
+
+export const baseURL = import.meta.env.VITE_API_BASE_URL || "https://laravel-api-for-microfrontend-main-czaohc.free.laravel.cloud";
+export const authURL = import.meta.env.VITE_AUTH_URL || "https://mfe-sso-auth-c10l7saqt-yair-htets-projects-34928918.vercel.app";
 export const clientId = import.meta.env.VITE_SSO_CLIENT_ID || "product-app";
 
 const api = axios.create({
